@@ -30,7 +30,7 @@ const Movie = () => {
     );
   }
 
-  document.body.classList.remove('single-body');
+  document.body.classList.remove("single-body");
 
   return (
     <div>
@@ -71,35 +71,41 @@ const Movie = () => {
           );
         })}
       </Row>
-      <div className="d-flex align-items-center justify-content-between mb-4">
-        {page === 1 ? (
-          <button type="button" className="btn btn-primary" disabled>
-            Prev
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => handlePrevPage(page)}
-          >
-            Prev
-          </button>
-        )}
-        <p className="text-light mb-0">{(page * 10 ) > results ? results : (page * 10) }/{results}</p>
-        {results <= (page * 10) ? (
-          <button type="button" className="btn btn-primary" disabled>
-            Next
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => handleNextPage(page)}
-          >
-            Next
-          </button>
-        )}
-      </div>
+      {movie.length > 0 ? (
+        <div className="d-flex align-items-center justify-content-between mb-4">
+          {page === 1 ? (
+            <button type="button" className="btn btn-primary" disabled>
+              Prev
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => handlePrevPage(page)}
+            >
+              Prev
+            </button>
+          )}
+          <p className="text-light mb-0">
+            {page * 10 > results ? results : page * 10}/{results}
+          </p>
+          {results <= page * 10 ? (
+            <button type="button" className="btn btn-primary" disabled>
+              Next
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => handleNextPage(page)}
+            >
+              Next
+            </button>
+          )}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
