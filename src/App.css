@@ -1,0 +1,79 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --bs-gray-dark: #2b2e32;
+}
+
+body {
+  background-color: var(--bs-gray-dark);
+  padding-top: 80px;
+}
+
+.single-body {
+  padding-top: 0;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  color: var(--bs-white);
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--bs-white);
+  opacity: 1;
+}
+
+@media  (min-width:420px) and (max-width:575px) {
+  .row-cols-1>* {
+    width: 50%;
+  }  
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.card-img-top {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  line-height: inherit !important;
+}
+
+.movie-card {
+  color: #000;
+  text-decoration: none;
+}
+
+.movie-card .h5 {
+  font-size: 1rem;  
+}
+
+.movie-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px 4px 0 0;
+}
+
+.single-card {
+  width: 90%;
+} 
+
+@media  (min-width:1024px) {
+  .single-card {
+    width: 80%;
+  } 
+}
+
+@media  (min-width:1200px) {
+  .single-card {
+    width: 70%;
+  } 
+}
+
